@@ -6,8 +6,9 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Tambah Data Fakultas</h1>
-
+    <h1 class="h3 text-gray-800 fw-bold">
+            <i class="fas fa-university fa-fw text-primary me-2"></i> Tambah Data Fakultas
+        </h1>
     <div class="card shadow mb-4">
         <div class="card-header py-3 bg-primary text-white">
             <h6 class="m-0 font-weight-bold">Formulir Input Data Fakultas</h6>
@@ -19,47 +20,76 @@
                 <div class="row">
                     <!-- ID Fakultas -->
                     <div class="col-md-6 mb-3">
-                        <label for="id_fakultas" class="form-label fw-semibold">ID Fakultas</label>
-                        <input type="text" class="form-control" name="id_fakultas" id="id_fakultas"
-                            placeholder="Masukkan ID Fakultas" required>
+                        <label for="kode_fakultas" class="form-label fw-semibold">Kode Fakultas</label>
+                        <input type="text" class="form-control @error('kode_fakultas') is-invalid @enderror" 
+                                id="kode_fakultas" name="kode_fakultas" 
+                                value="{{ old('kode_fakultas') }}" required>
+                        @error('kode_fakultas')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <!-- Nama Fakultas -->
                     <div class="col-md-6 mb-3">
                         <label for="nama_fakultas" class="form-label fw-semibold">Nama Fakultas</label>
-                        <input type="text" class="form-control" name="nama_fakultas" id="nama_fakultas"
-                            placeholder="Masukkan Nama Fakultas" required>
+                        <input type="text" class="form-control @error('nama_fakultas') is-invalid @enderror" 
+                                id="nama_fakultas" name="nama_fakultas" 
+                                value="{{ old('nama_fakultas') }}" required>
+                        @error('nama_fakultas')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <!-- Nama Dekan -->
                     <div class="col-md-6 mb-3">
                         <label for="nama_dekan" class="form-label fw-semibold">Nama Dekan</label>
-                        <input type="text" class="form-control" name="nama_dekan" id="nama_dekan"
-                            placeholder="Masukkan Nama Dekan" required>
+                        <input type="text" class="form-control @error('nama_dekan') is-invalid @enderror" 
+                                id="nama_dekan" name="nama_dekan" 
+                                value="{{ old('nama_dekan') }}" required>
+                        @error('nama_dekan')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <!-- Nama Wakil Dekan -->
                     <div class="col-md-6 mb-3">
                         <label for="nama_wakil_dekan" class="form-label fw-semibold">Nama Wakil Dekan</label>
-                        <input type="text" class="form-control" name="nama_wakil_dekan" id="nama_wakil_dekan"
-                            placeholder="Masukkan Nama Wakil Dekan" required>
+                        <input type="text" class="form-control @error('nama_wakil_dekan') is-invalid @enderror" 
+                                id="nama_wakil_dekan" name="nama_wakil_dekan" 
+                                value="{{ old('nama_wakil_dekan') }}" required>
+                        @error('nama_wakil_dekan')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <!-- Tahun Berdiri -->
                     <div class="col-md-6 mb-4">
-                        <label for="nama_tahun_berdiri" class="form-label fw-semibold">Tahun Berdiri</label>
-                        <input type="number" class="form-control" name="nama_tahun_berdiri" id="nama_tahun_berdiri"
-                            placeholder="Masukkan Tahun Berdiri" required>
+                        <label for="tahun_berdiri" class="form-label fw-semibold">Tahun Berdiri</label>
+                        <input type="number" class="form-control @error('tahun_berdiri') is-invalid @enderror" 
+                                id="tahun_berdiri" name="tahun_berdiri" 
+                                value="{{ old('tahun_berdiri') }}" required>
+                        @error('tahun_berdiri')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
-                </div>
 
                 <!-- Tombol Aksi -->
-                <div class="d-flex justify-content-end">
-                    <a href=".." class="btn btn-secondary me-2">
-                        <i class="fas fa-arrow-left"></i> Kembali
+                <div class="d-flex justify-content-between mt-4">
+                    <a href="{{ route('datafakultas.index') }}" class="btn btn-secondary me-2">
+                        <i class="fas fa-arrow-left me-2"></i> Kembali
                     </a>
                     <button type="submit" class="btn btn-success">
-                        <i class="fas fa-save"></i> Simpan Data
+                        <i class="fas fa-save me-2"></i> Simpan Data
                     </button>
                 </div>
             </form>
