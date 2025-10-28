@@ -5,17 +5,17 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laptop-code"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">SB-Admin <sup>2</sup></div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" 
             href="{{ route('dashboard.index') }}">
-                    <i class="fas fa-home"></i>
+                    <i class="fas fa-tachometer-alt fa-fw text me-2"></i>
                     <span>Dashboard</span></a>
             </li>
 
