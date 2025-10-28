@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container-fluid">
 
     <!-- Header -->
@@ -9,7 +10,7 @@
             <i class="fas fa-chalkboard-teacher fa-fw text-primary"></i> Data Dosen
         </h1>
         <a href="{{ route('datadosen.create') }}" class="btn btn-primary btn-sm shadow-sm">
-            <i class="fas fa-plus fa-sm text-white-50"></i> Tambah Data
+            <i class="fas fa-plus fa-sm text-white-50"></i> Tambah Data Dosen
         </a>
     </div>
 
@@ -32,56 +33,37 @@
                             <th>Pendidikan</th>
                             <th>Mata Kuliah Keahlian</th>
                             <th>Jabatan Fungsional</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody class="text-center">
+                    @foreach($dosen as $item)
                         <tr>
-                            <td>1</td>
-                            <td>1004059702</td>
-                            <td class="text-start">Ir. HIDAYATI RUSNEDY S.T, M.Kom</td>
-                            <td>Wanita</td>
-                            <td>TEKNIK INFORMATIKA</td>
-                            <td>S2</td>
-                            <td>Decision Support System, Data Mining</td>
-                            <td>Asisten Ahli (150.00) / Instructor</td>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{$item->nidn}}</td>
+                            <td >{{$item->nama}}</td>
+                            <td>{{$item->jenis_kelamin}}</td>
+                            <td>{{$item->homebase}}</td>
+                            <td>{{$item->pendidikan}}</td>
+                            <td>{{$item->mata_kuliah_keahlian}}</td>
+                            <td>{{$item->jabatan_fungsional}}</td>
+                            <td>
+                                <a href="{{ route('datadosen.edit', $item->id) }}" class="btn btn-sm btn-warning me-1">
+                                    <i class="fas fa-edit fa-sm text-white-50"></i> Edit
+                                </a>
+                                <form action="{{ route('datadosen.destroy', $item->id) }}" method="POST" class="d-inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+                                        <i class="fas fa-trash-alt text-white-50"></i> Hapus
+                                    </button>
+                                </form>
+                            </td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>1026067802</td>
-                            <td class="text-start">SAFNI MARWA S.T, M.Sc.E.</td>
-                            <td>Wanita</td>
-                            <td>TEKNIK INFORMATIKA</td>
-                            <td>S2</td>
-                            <td>Software Engineering</td>
-                            <td>Lektor (200.00) / Assistant Professor</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>1021109102</td>
-                            <td class="text-start">Ir. R. JOKO MUSRIDHO S.T, M.Phil</td>
-                            <td>Pria</td>
-                            <td>TEKNIK INFORMATIKA</td>
-                            <td>S2</td>
-                            <td>Kecerdasan Buatan</td>
-                            <td>Asisten Ahli (150.00) / Instructor</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>1005088602</td>
-                            <td class="text-start">DEDDY GUSMAN S.Kom, M.T.I</td>
-                            <td>Pria</td>
-                            <td>TEKNIK INFORMATIKA</td>
-                            <td>S2</td>
-                            <td>Dasar Pemrograman, Pemrograman Web</td>
-                            <td>Lektor (300.00) / Assistant Professor</td>
-                        </tr>
+                    @endforeach
+                       
                     </tbody>
                 </table>
-            </div>
-
-            <!-- Footer Info -->
-            <div class="mt-3 text-end">
-                <small class="text-muted">Total Data Dosen: 4</small>
             </div>
         </div>
     </div>
