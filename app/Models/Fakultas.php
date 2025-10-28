@@ -9,5 +9,11 @@ class Fakultas extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['id'];
+    protected $fillable = [
+        'kode_fakultas',
+        'nama_fakultas',
+        'nama_dekan',
+        'nama_wakil_dekan',
+        'tahun_berdiri',
+    ];
 }
