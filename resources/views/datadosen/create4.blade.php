@@ -6,7 +6,9 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Tambah Data Dosen</h1>
+    <h1 class="h3 text-gray-800">
+        <i class="fas fa-chalkboard-teacher fa-fw text-primary"></i> Tambah Data Dosen
+    </h1>
 
     <div class="card shadow mb-4">
         <div class="card-header py-3 bg-primary text-white">
@@ -26,8 +28,8 @@
 
                     <!-- Nama Dosen -->
                     <div class="col-md-6 mb-3">
-                        <label for="nama_dosen" class="form-label fw-semibold">Nama Dosen</label>
-                        <input type="text" class="form-control" name="nama_dosen" id="nama_dosen"
+                        <label for="nama" class="form-label fw-semibold">Nama Dosen</label>
+                        <input type="text" class="form-control" name="nama" id="nama"
                             placeholder="Masukkan Nama Dosen" required>
                     </div>
 
@@ -44,7 +46,7 @@
                     <!-- Home Base -->
                     <div class="col-md-6 mb-3">
                         <label for="home_base" class="form-label fw-semibold">Home Base</label>
-                        <input type="text" class="form-control" name="home_base" id="home_base"
+                        <input type="text" class="form-control" name="homebase" id="homebase"
                             placeholder="Masukkan Home Base" required>
                     </div>
 
