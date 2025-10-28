@@ -13,12 +13,14 @@ return new class extends Migration
     {
         Schema::create('fakultas', function (Blueprint $table) {
             $table->id();
+            $table->string('kode_fakultas')->unique();
             $table->string('nama_fakultas');
-            $table->string('dekan_fakultas');
-            $table->string('wakil_dekan_fakultas');
-            $table->integer('tahun_berdiri_fakultas');
+            $table->string('nama_dekan');
+            $table->string('nama_wakil_dekan');
+            $table->year('tahun_berdiri');
             $table->timestamps();
         });
+
     }
 
     /**
