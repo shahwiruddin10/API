@@ -7,9 +7,11 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Tambah Data Mahasiswa</h1>
+        <h1 class="h3 text-gray-800">
+            <i class="fas fa-users fa-fw text-primary"></i> Tambah Data Mahasiswa
+        </h1>
         <a href="{{ route('datamahasiswa.index') }}" class="btn btn-secondary btn-sm shadow-sm">
-            <i class="fas fa-arrow-left fa-sm text-white-50"></i> Kembali
+            <i class="fas fa-arrow-left fa-sm text-primary-50"></i> Kembali
         </a>
     </div>
 
@@ -26,46 +28,66 @@
                     <!-- Nama Mahasiswa -->
                     <div class="col-md-6 mb-3">
                         <label for="nama_mahasiswa" class="form-label fw-semibold">Nama Mahasiswa</label>
-                        <input type="text" class="form-control" name="nama_mahasiswa" id="nama_mahasiswa"
-                            placeholder="Masukkan Nama Mahasiswa" required>
-                    </div>
-                    
-                    <!-- Jenis Kelamin -->
-                    <div class="col-md-6 mb-3">
-                        <label for="jenis_kelamin" class="form-label fw-semibold">Jenis Kelamin</label>
-                        <select class="form-control" name="jenis_kelamin" id="jenis_kelamin" required>
-                            <option value="">-- Pilih Jenis Kelamin --</option>
-                            <option value="Pria">Pria</option>
-                            <option value="Wanita">Wanita</option>
-                        </select>
+                        <input type="text" class="form-control @error('nama_mahasiswa') is-invalid @enderror" 
+                            name="nama_mahasiswa" id="nama_mahasiswa" 
+                            placeholder="Masukkan Nama Mahasiswa" value="{{ old('nama_mahasiswa') }}" required>
+                        @error('nama_mahasiswa')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <!-- NIM -->
                     <div class="col-md-6 mb-3">
                         <label for="nim" class="form-label fw-semibold">NIM</label>
-                        <input type="text" class="form-control" name="nim" id="nim"
-                            placeholder="Masukkan NIM" required>
+                        <input type="text" class="form-control @error('nim') is-invalid @enderror" 
+                            name="nim" id="nim" 
+                            placeholder="Masukkan NIM" value="{{ old('nim') }}" required>
+                        @error('nim')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <!-- Alamat -->
                     <div class="col-md-6 mb-3">
                         <label for="alamat" class="form-label fw-semibold">Alamat</label>
-                        <input type="text" class="form-control" name="alamat" id="alamat"
-                            placeholder="Masukkan Alamat" required>
+                        <input type="text" class="form-control @error('alamat') is-invalid @enderror" 
+                            name="alamat" id="alamat" 
+                            placeholder="Masukkan Alamat" value="{{ old('alamat') }}" required>
+                        @error('alamat')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <!-- Fakultas -->
                     <div class="col-md-6 mb-3">
                         <label for="fakultas" class="form-label fw-semibold">Fakultas</label>
-                        <input type="text" class="form-control" name="fakultas" id="fakultas"
-                            placeholder="Masukkan Fakultas" required>
+                        <input type="text" class="form-control @error('fakultas') is-invalid @enderror" 
+                            name="fakultas" id="fakultas" 
+                            placeholder="Masukkan Fakultas" value="{{ old('fakultas') }}" required>
+                        @error('fakultas')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <!-- Email -->
                     <div class="col-md-6 mb-3">
                         <label for="email" class="form-label fw-semibold">Email</label>
-                        <input type="email" class="form-control" name="email" id="email"
-                            placeholder="Masukkan Email Mahasiswa" required>
+                        <input type="email" class="form-control @error('email') is-invalid @enderror" 
+                            name="email" id="email" 
+                            placeholder="Masukkan Email" value="{{ old('email') }}" required>
+                        @error('email')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                 <!-- Tombol Aksi -->
