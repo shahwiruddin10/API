@@ -7,11 +7,11 @@
 
     <!-- Page Heading -->
     <h1 class="h3 text-gray-800">
-        <i class="fas fa-chalkboard-teacher fa-fw text-primary"></i> Tambah Data Dosen
+        <i class="fas fa-chalkboard-teacher fa-fw text-dark"></i> Tambah Data Dosen
     </h1>
 
     <div class="card shadow mb-4">
-        <div class="card-header py-3 bg-primary text-white">
+        <div class="card-header py-3 bg-dark text-white">
             <h6 class="m-0 font-weight-bold">Formulir Input Data Dosen</h6>
         </div>
 
